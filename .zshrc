@@ -109,5 +109,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
+bindkey -v # vi keys
 export TERM=xterm-256color # solve the issue that zsh-autosuggestions has wrong highlight in tmux
