@@ -6,6 +6,7 @@ call plug#begin('~/vimfiles/plugged')
     Plug 'preservim/nerdtree'
     " Plug 'Valloric/YouCompleteMe'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " syntax
@@ -93,3 +94,5 @@ set sidescroll=1
 
 set background=dark
 colorscheme gruvbox
+
+let mapleader = ' '
