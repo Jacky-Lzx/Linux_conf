@@ -19,8 +19,14 @@ call plug#begin('~/vimfiles/plugged')
     " vim-surround
 call plug#end()
 
+set background=dark
+colorscheme gruvbox
+" colorscheme synthwave84
+"
+let g:tex_conceal = 0
+
 let g:rainbow_active = 1
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-java', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-spell-checker', 'coc-texlab', 'coc-vimlsp',
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-java', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-texlab', 'coc-vimlsp',
             \ 'coc-marketplace']
 
 " syntax
@@ -106,8 +112,6 @@ set sidescroll=1
 " Packer 
 " lua require('plugins')
 
-set background=dark
-colorscheme gruvbox
 
 let mapleader = ' '
 
