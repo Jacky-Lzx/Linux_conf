@@ -1,5 +1,11 @@
 #! /bin/zsh
 
+rm -rf ./nvim
+rm plug.vim
+rm -rf ./ranger
+rm .zshrc
+rm .tmux.conf
+
 # nvim config
 cp -r $HOME/.config/nvim ./
 rm -rf ./nvim/tmp

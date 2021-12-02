@@ -4,11 +4,11 @@
 # TODO: install nerd fonts, ranger_devicons
 #
 
-cp -r ./nvim $HOME/.config/nvim
+cp -r ./nvim $HOME/.config/
 
-cp -r plug.vim $HOME/.local/share/nvim/site/autoload/
+cp plug.vim $HOME/.local/share/nvim/site/autoload/
 
-cp -r ./ranger $HOME/.config/ranger
+cp -r ./ranger $HOME/.config/
 
 cp .tmux.conf $HOME/
 
