@@ -13,9 +13,11 @@
         " -----------------------
         " --- status bar
         " -----------------------
-        Plug 'vim-airline/vim-airline' 
-        Plug 'vim-airline/vim-airline-themes'
+        Plug 'vim-airline/vim-airline'
+        Plug 'vim-airline/vim-airline-themes' " Together wiht vim-airline
         " Plug 'itchyny/lightline.vim'
+        " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+        " Plug 'kyazdani42/nvim-web-devicons' " lua; requited to display icons in galaxyline
 
         " -----------------------
         " --- colorscheme
@@ -28,12 +30,19 @@
         " -----------------------
         " --- functional
         " -----------------------
-        Plug 'preservim/nerdtree'
+        " Plug 'preservim/nerdtree'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'easymotion/vim-easymotion'
         Plug 'Yggdroot/indentLine'
         Plug 'mbbill/undotree'
-        " vim-surround
+
+        Plug 'blackcauldron7/surround.nvim'
+        "
+        "
+        Plug 'dstein64/vim-startuptime'
+        " Plug 'voldikss/vim-floaterm'
+        Plug 'mhinz/vim-startify' " the startup window showing MRU files
+        " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " we recommend updating the parsers on update
     call plug#end()
 
     " lua require('plugins') " packer 
@@ -66,7 +75,8 @@
 
         " set cursorcolumn
         set cursorline " show cursor location
-        let g:tex_conceal = 0 " cancel the conceal for latex file
+        set conceallevel=0
+        " let g:tex_conceal = 0 " cancel the conceal for latex file
         set title " change the terminal's title
 
         set ruler " show the current row and column
@@ -87,6 +97,9 @@
 " |                                                                              |
 " --------------------------------------------------------------------------------
 
+        set conceallevel=2 " set conceal leveal to hide special characters
+        set concealcursor= " the characters on current line should not be concealed. can be changed to inc
+        set mouse=a
         " TODO: not sort yet
         let mapleader = ' ' " set leader key to <space>
         set history=2000 " history : how many lines of history VIM has to remember
@@ -133,6 +146,29 @@
 " |                                   PLUGINS                                    |
 " |                                                                              |
 " --------------------------------------------------------------------------------
+    " -----------------------
+    " --- plug.indentline
+    " -----------------------
+        " let g:indentLine_char = '│' " set single character to show indentation
+        let g:indentLine_char_list = ['│', '¦', '┆', '┊'] " set multiple characters to display different level of indentation
+        let g:indentLine_setConceal = 0 " don't change current conceal setting
+        " let g:indentLine_concealcursor = ''
+        " let g:indentLine_conceallevel = 2
+    " -----------------------
+    " --- plug.surround
+    " -----------------------
+        lua require"surround".setup{}
+    " -----------------------
+    " --- plug.floaterm
+    " -----------------------
+        nnoremap  \t  :FloatermToggle<CR>
+        noremap! \t  <Esc>:FloatermToggle<CR>
+        tnoremap \t  <C-\><C-n>:FloatermToggle<CR>
+
+    " -----------------------
+    " --- plug.airline
+    " -----------------------
+        let g:airline#extensions#tabline#enabled = 1
 
     " -----------------------
     " --- plug.rainbow
@@ -159,7 +195,7 @@
         set nowritebackup
 
         " Give more space for displaying messages.
-        set cmdheight=2
+        " set cmdheight=2
 
         " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
         " delays and poor user experience.
