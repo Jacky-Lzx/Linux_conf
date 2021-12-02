@@ -41,7 +41,7 @@
         "
         Plug 'dstein64/vim-startuptime' " ✓
         " Plug 'voldikss/vim-floaterm'
-        Plug 'mhinz/vim-startify' " the startup window showing MRU files
+        Plug 'mhinz/vim-startify' " ✓ the startup window showing MRU files
         " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " we recommend updating the parsers on update
     call plug#end()
 
@@ -147,6 +147,16 @@
 " |                                                                              |
 " --------------------------------------------------------------------------------
     " -----------------------
+    " --- plug.startify
+    " -----------------------
+    let g:startify_bookmarks = ['~/.config/nvim/init.vim', '~/.tmux.conf', '~/.zshrc'] " set bookmarks to open
+    let g:startify_files_number = 5 " set number of MRU files
+    " let g:startify_custom_header =
+    "       \ 'startify#center(startify#fortune#cowsay())'
+    "       " \ 'startify#center(startify#fortune#boxed())'
+
+
+    " -----------------------
     " --- plug.indentline
     " -----------------------
         " let g:indentLine_char = '│' " set single character to show indentation
@@ -179,6 +189,7 @@
     " --- plug.undotree
     " -----------------------
         nnoremap <leader>ut :UndotreeToggle<CR>
+        " nnoremap <leader>utf :UndotreeFocus<CR>
         " " Set presistent undo tree by storing it in a file
         " "     TODO: delete folder periodically to save space
         if has("persistent_undo")
