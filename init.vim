@@ -13,7 +13,7 @@
         " --- status bar
         " -----------------------
         Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes' " Together wiht vim-airline
+        Plug 'vim-airline/vim-airline-themes' " Together with vim-airline
         " Plug 'itchyny/lightline.vim'
         " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
         " Plug 'kyazdani42/nvim-web-devicons' " lua; requited to display icons in galaxyline
@@ -42,7 +42,7 @@
         " Plug 'voldikss/vim-floaterm' " floating terminal. not used since using terminal
         Plug 'mhinz/vim-startify' " ✓ the startup window showing MRU files
         " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " we recommend updating the parsers on update
-        Plug 'SirVer/ultisnips' " track the engine.
+        " Plug 'SirVer/ultisnips' " track the engine.
         Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
 
     call plug#end()
@@ -97,7 +97,7 @@
 " |                                                                              |
 " --------------------------------------------------------------------------------
 
-        set conceallevel=2 " set conceal leveal to hide special characters
+        set conceallevel=2 " set conceal level to hide special characters
         set concealcursor= " the characters on current line should not be concealed. can be changed to inc
         set mouse=a
         " TODO: not sort yet
@@ -143,23 +143,36 @@
 
 " --------------------------------------------------------------------------------
 " |                                                                              |
+" |                                   KEYMAP                                     |
+" |                                                                              |
+" --------------------------------------------------------------------------------
+
+    " nmap <C-_> iecho "hello world"<ESC>
+    " nmap <leader>m iecho "hello world"<ESC>
+
+
+" --------------------------------------------------------------------------------
+" |                                                                              |
 " |                                   PLUGINS                                    |
 " |                                                                              |
 " --------------------------------------------------------------------------------
     " -----------------------
     " --- plug.ultisnips
     " -----------------------
-    " " use coc-snipets for showing in float window "
-        let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips'] " specify the path, to just load snippets under this file for speedup.
-        " " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
-        " " - https://github.com/Valloric/YouCompleteMe
-        " " - https://github.com/nvim-lua/completion-nvim
-        let g:UltiSnipsExpandTrigger="<M-/>"
-        let g:UltiSnipsJumpForwardTrigger="<M-l>"
-        let g:UltiSnipsJumpBackwardTrigger="<M-h>"
-        " If you want :UltiSnipsEdit to split your window.
-        let g:UltiSnipsEditSplit="vertical"
-        " let g:UltiSnipsListSnippets="<M-/>"
+    " " use coc-snippets for showing in float window "
+        " let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips'] " specify the path, to just load snippets under this file for speedup.
+        " " " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+        " " " - https://github.com/Valloric/YouCompleteMe
+        " " " - https://github.com/nvim-lua/completion-nvim
+        " " let g:UltiSnipsExpandTrigger="<c-/>"
+        " let g:UltiSnipsExpandTrigger="<c-_>"
+        " let g:UltiSnipsJumpForwardTrigger="<c-l>"
+        " let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+        " " let g:UltiSnipsJumpForwardTrigger="<tab>"
+        " " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+        " " If you want :UltiSnipsEdit to split your window.
+        " let g:UltiSnipsEditSplit="vertical"
+        " " let g:UltiSnipsListSnippets="<M-/>"
     " -----------------------
     " --- plug.easymotion
     " -----------------------
@@ -237,7 +250,7 @@
         let g:coc_global_extensions = [
                     \ 'coc-json', 'coc-git', 'coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-java', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-texlab', 'coc-vimlsp',
                     \ 'coc-marketplace',
-                    \ 'coc-spell-checker',
+                    \ 'coc-spell-checker', 'coc-cspell-dicts',
                     \ 'coc-snippets',
                     \ ] " add extensions automatically on new computers
         " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
@@ -406,6 +419,19 @@
         " Resume latest coc list.
         nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+        " " used for showing recommendations of coc-spell-checker
+        vmap <silent><leader>a <Plug>(coc-codeaction-selected)
+
+        " Use <C-j> for select text for visual placeholder of snippet.
+        vmap <C-j> <Plug>(coc-snippets-select)
+        " Use <C-j> for jump to next placeholder, it's default of coc.nvim
+        let g:coc_snippet_next = '<c-j>'
+        " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+        let g:coc_snippet_prev = '<c-k>'
+        " Use <C-j> for both expand and jump (make expand higher priority.)
+        imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+
 " --------------------------------------------------------------------------------
 " |                                                                              |
 " |                                     TEMP                                     |
@@ -413,3 +439,5 @@
 " --------------------------------------------------------------------------------
 
 " nnoremap <leader>ld :source ~/.config/nvim/init.vim<CR>
+" TODO: some plugins change the setting
+    set signcolumn=auto:4
