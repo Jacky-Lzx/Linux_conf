@@ -3,7 +3,6 @@
 "                               neovim config file
 "                                                                     by Zexi.Li
 " ================================================================================
-
 " --------------------------------------------------------------------------------
 " |                                                                              |
 " |                                   VIM-PLUG                                   |
@@ -43,8 +42,10 @@
         " Plug 'voldikss/vim-floaterm' " floating terminal. not used since using terminal
         Plug 'mhinz/vim-startify' " ✓ the startup window showing MRU files
         " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " we recommend updating the parsers on update
-    call plug#end()
+        Plug 'SirVer/ultisnips' " track the engine.
+        Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
 
+    call plug#end()
     " lua require('plugins') " packer
 
 " --------------------------------------------------------------------------------
@@ -66,7 +67,6 @@
         if has("termguicolors")
             set termguicolors
         endif " set true color
-
     " -----------------------
     " --- appearance
     " -----------------------
@@ -147,6 +147,20 @@
 " |                                                                              |
 " --------------------------------------------------------------------------------
     " -----------------------
+    " --- plug.ultisnips
+    " -----------------------
+    " " use coc-snipets for showing in float window "
+        let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips'] " specify the path, to just load snippets under this file for speedup.
+        " " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+        " " - https://github.com/Valloric/YouCompleteMe
+        " " - https://github.com/nvim-lua/completion-nvim
+        let g:UltiSnipsExpandTrigger="<M-/>"
+        let g:UltiSnipsJumpForwardTrigger="<M-l>"
+        let g:UltiSnipsJumpBackwardTrigger="<M-h>"
+        " If you want :UltiSnipsEdit to split your window.
+        let g:UltiSnipsEditSplit="vertical"
+        " let g:UltiSnipsListSnippets="<M-/>"
+    " -----------------------
     " --- plug.easymotion
     " -----------------------
         let g:EasyMotion_smartcase = 1 " turn on case-insensitive feature
@@ -223,7 +237,8 @@
         let g:coc_global_extensions = [
                     \ 'coc-json', 'coc-git', 'coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-java', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-texlab', 'coc-vimlsp',
                     \ 'coc-marketplace',
-                    \ 'coc-spell-checker'
+                    \ 'coc-spell-checker',
+                    \ 'coc-snippets',
                     \ ] " add extensions automatically on new computers
         " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
         " unicode characters in the file autoload/float.vim
