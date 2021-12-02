@@ -33,19 +33,19 @@
         " Plug 'preservim/nerdtree'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'easymotion/vim-easymotion'
-        Plug 'Yggdroot/indentLine'
-        Plug 'mbbill/undotree'
+        Plug 'Yggdroot/indentLine' " ✓
+        Plug 'mbbill/undotree' " ✓
 
         Plug 'blackcauldron7/surround.nvim'
         "
         "
-        Plug 'dstein64/vim-startuptime'
+        Plug 'dstein64/vim-startuptime' " ✓
         " Plug 'voldikss/vim-floaterm'
         Plug 'mhinz/vim-startify' " the startup window showing MRU files
         " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " we recommend updating the parsers on update
     call plug#end()
 
-    " lua require('plugins') " packer 
+    " lua require('plugins') " packer
 
 " --------------------------------------------------------------------------------
 " |                                                                              |
@@ -120,7 +120,7 @@
 
         set smartindent
         set tabstop=4
-        set softtabstop=4 
+        set softtabstop=4
         set expandtab " change tab to spaces
         set smarttab
         set shiftround
@@ -161,7 +161,7 @@
     " -----------------------
     " --- plug.floaterm
     " -----------------------
-        nnoremap  \t  :FloatermToggle<CR>
+        nnoremap \t  :FloatermToggle<CR>
         noremap! \t  <Esc>:FloatermToggle<CR>
         tnoremap \t  <C-\><C-n>:FloatermToggle<CR>
 
@@ -174,6 +174,22 @@
     " --- plug.rainbow
     " -----------------------
         let g:rainbow_active = 1 " active rainbow brackets
+
+    " -----------------------
+    " --- plug.undotree
+    " -----------------------
+        nnoremap <leader>ut :UndotreeToggle<CR>
+        " " Set presistent undo tree by storing it in a file
+        " "     TODO: delete folder periodically to save space
+        if has("persistent_undo")
+           let target_path = expand('~/.config/nvim/tmp/undo')
+            if !isdirectory(target_path)
+                call mkdir(target_path, "p", 0700)
+            endif
+            let &undodir=target_path
+            set undofile
+        endif
+
 
     " -----------------------
     " --- plug.coc
