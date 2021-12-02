@@ -40,7 +40,7 @@
         "
         "
         Plug 'dstein64/vim-startuptime' " ✓
-        " Plug 'voldikss/vim-floaterm'
+        " Plug 'voldikss/vim-floaterm' " floating terminal. not used since using terminal
         Plug 'mhinz/vim-startify' " ✓ the startup window showing MRU files
         " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " we recommend updating the parsers on update
     call plug#end()
@@ -183,7 +183,17 @@
     " -----------------------
     " --- plug.rainbow
     " -----------------------
-        let g:rainbow_active = 1 " active rainbow brackets
+        let g:rainbow_active = 1 " activate rainbow brackets
+        " au FileType c,cpp,objc,objcpp call rainbow#load() " activate raibow brackets for specific files
+        let g:rainbow_load_separately = [
+                \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+                \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+                \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+                \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+            \ ]
+        let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+        let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
 
     " -----------------------
     " --- plug.undotree
