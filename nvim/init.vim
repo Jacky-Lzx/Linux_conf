@@ -12,8 +12,8 @@
         " -----------------------
         " --- status bar
         " -----------------------
-        Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes' " Together with vim-airline
+        Plug 'vim-airline/vim-airline' " ✓
+        Plug 'vim-airline/vim-airline-themes' " ✓ Together with vim-airline
         " Plug 'itchyny/lightline.vim'
         " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
         " Plug 'kyazdani42/nvim-web-devicons' " lua; requited to display icons in galaxyline
@@ -21,8 +21,8 @@
         " -----------------------
         " --- colorscheme
         " -----------------------
-        Plug 'rktjmp/lush.nvim' " required by gruvbox
-        Plug 'ellisonleao/gruvbox.nvim'
+        Plug 'rktjmp/lush.nvim' " ✓ required by gruvbox
+        Plug 'ellisonleao/gruvbox.nvim' " ✓
         " Plug 'artanikin/vim-synthwave84'
         Plug 'luochen1990/rainbow' " ✓ rainbow brackets
 
@@ -43,8 +43,10 @@
         Plug 'mhinz/vim-startify' " ✓ the startup window showing MRU files
         " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " we recommend updating the parsers on update
         " Plug 'SirVer/ultisnips' " track the engine.
-        Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
+        Plug 'honza/vim-snippets' " Snippets are separated from the engine.
 
+        " Plug 'ryanoasis/vim-devicons'
+        Plug 'junegunn/vim-peekaboo' " show registers when pasting
     call plug#end()
     " lua require('plugins') " packer
 
@@ -135,6 +137,7 @@
         set formatoptions+=B
 
         set backspace=indent,eol,start " to solve the problem that backspace cannot delete things (note CTRL-I is the same as <Tab>)
+        set ignorecase
         set smartcase
         set hlsearch " highlight search results when searching
         set incsearch " find matches when spelling
@@ -247,12 +250,16 @@
     " -----------------------
     " --- plug.coc
     " -----------------------
-        let g:coc_global_extensions = [
-                    \ 'coc-json', 'coc-git', 'coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-java', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-texlab', 'coc-vimlsp',
-                    \ 'coc-marketplace',
-                    \ 'coc-spell-checker', 'coc-cspell-dicts',
-                    \ 'coc-snippets',
-                    \ ] " add extensions automatically on new computers
+    "   " TEMP: checked: coc-json, 
+        " let g:coc_global_extensions = [
+        "             \ 'coc-json', 'coc-git', 'coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-java', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-texlab', 'coc-vimlsp',
+        "             \ 'coc-marketplace',
+        "             \ 'coc-spell-checker', 'coc-cspell-dicts',
+        "             \ 'coc-snippets',
+        "             \ ] " add extensions automatically on new computers
+        "
+        " coc-explorer
+        " coc-translator
         " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
         " unicode characters in the file autoload/float.vim
         set encoding=utf-8
@@ -423,6 +430,7 @@
         vmap <silent><leader>a <Plug>(coc-codeaction-selected)
 
         " Use <C-j> for select text for visual placeholder of snippet.
+        imap <C-l> <Plug>(coc-snippets-expand)
         vmap <C-j> <Plug>(coc-snippets-select)
         " Use <C-j> for jump to next placeholder, it's default of coc.nvim
         let g:coc_snippet_next = '<c-j>'
@@ -430,6 +438,7 @@
         let g:coc_snippet_prev = '<c-k>'
         " Use <C-j> for both expand and jump (make expand higher priority.)
         imap <C-j> <Plug>(coc-snippets-expand-jump)
+        let g:snips_author = 'Zexi Li'
 
 
 " --------------------------------------------------------------------------------
