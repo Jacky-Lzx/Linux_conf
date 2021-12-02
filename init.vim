@@ -25,14 +25,14 @@
         Plug 'rktjmp/lush.nvim' " required by gruvbox
         Plug 'ellisonleao/gruvbox.nvim'
         " Plug 'artanikin/vim-synthwave84'
-        Plug 'luochen1990/rainbow' " rainbow brackets
+        Plug 'luochen1990/rainbow' " ✓ rainbow brackets
 
         " -----------------------
         " --- functional
         " -----------------------
         " Plug 'preservim/nerdtree'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        Plug 'easymotion/vim-easymotion'
+        Plug 'easymotion/vim-easymotion' " ✓
         Plug 'Yggdroot/indentLine' " ✓
         Plug 'mbbill/undotree' " ✓
 
@@ -147,13 +147,18 @@
 " |                                                                              |
 " --------------------------------------------------------------------------------
     " -----------------------
+    " --- plug.easymotion
+    " -----------------------
+        let g:EasyMotion_smartcase = 1 " turn on case-insensitive feature
+
+    " -----------------------
     " --- plug.startify
     " -----------------------
-    let g:startify_bookmarks = ['~/.config/nvim/init.vim', '~/.tmux.conf', '~/.zshrc'] " set bookmarks to open
-    let g:startify_files_number = 5 " set number of MRU files
-    " let g:startify_custom_header =
-    "       \ 'startify#center(startify#fortune#cowsay())'
-    "       " \ 'startify#center(startify#fortune#boxed())'
+        let g:startify_bookmarks = ['~/.config/nvim/init.vim', '~/.tmux.conf', '~/.zshrc'] " set bookmarks to open
+        let g:startify_files_number = 5 " set number of MRU files
+        " let g:startify_custom_header =
+        "       \ 'startify#center(startify#fortune#cowsay())'
+        "       " \ 'startify#center(startify#fortune#boxed())'
 
 
     " -----------------------
