@@ -12,5 +12,9 @@ Write once, debug everywhere.
 
 ## coc-marketplace
 
-`:CocList marketplace
+`:CocList marketplace`
+
+## coc-lists
+
+`:CocList <TAB>`
 
