@@ -98,7 +98,7 @@
 " |                                  FUNCTIONS                                   |
 " |                                                                              |
 " --------------------------------------------------------------------------------
-
+        set foldmethod=indent
         set conceallevel=2 " set conceal level to hide special characters
         set concealcursor= " the characters on current line should not be concealed. can be changed to inc
         set mouse=a " enable mouse
@@ -159,7 +159,7 @@
     " -----------------------
     " --- plug.ultisnips
     " -----------------------
-    " " use coc-snippets instead for showing in float window "
+        " " use coc-snippets instead for showing in float window "
         " let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips'] " specify the path, to just load snippets under this file for speedup.
         " " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
         " " - https://github.com/Valloric/YouCompleteMe
@@ -181,7 +181,7 @@
     " -----------------------
     " --- plug.startify
     " -----------------------
-        let g:startify_bookmarks = ['~/.config/nvim/init.vim', '~/.tmux.conf', '~/.zshrc'] " set bookmarks to open
+        let g:startify_bookmarks = [{'h': '~/.config/nvim/init.vim'}, '~/.tmux.conf', '~/.zshrc'] " set bookmarks to open
         let g:startify_files_number = 5 " set number of MRU files
         " let g:startify_custom_header =
         "       \ 'startify#center(startify#fortune#cowsay())'
@@ -203,9 +203,9 @@
     " -----------------------
     " --- plug.floaterm
     " -----------------------
-        nnoremap \t  :FloatermToggle<CR>
-        noremap! \t  <Esc>:FloatermToggle<CR>
-        tnoremap \t  <C-\><C-n>:FloatermToggle<CR>
+        " nnoremap \t  :FloatermToggle<CR>
+        " noremap! \t  <Esc>:FloatermToggle<CR>
+        " tnoremap \t  <C-\><C-n>:FloatermToggle<CR>
 
     " -----------------------
     " --- plug.airline
@@ -230,7 +230,7 @@
     " -----------------------
     " --- plug.undotree
     " -----------------------
-        nnoremap <leader>ut :UndotreeToggle<CR>
+        nnoremap <leader>ut :UndotreeToggle<CR>:UndotreeFocus<CR>
         " nnoremap <leader>utf :UndotreeFocus<CR>
         " " Set presistent undo tree by storing it in a file
         " "     TODO: delete folder periodically to save space
@@ -247,13 +247,23 @@
     " -----------------------
     " --- plug.coc
     " -----------------------
-    "   " TEMP: checked: coc-json, 
         " let g:coc_global_extensions = [
         "             \ 'coc-json', 'coc-git', 'coc-clangd', 'coc-cmake', 'coc-highlight', 'coc-java', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-texlab', 'coc-vimlsp',
         "             \ 'coc-marketplace',
-        "             \ 'coc-spell-checker', 'coc-cspell-dicts',
+        "             \ 'coc-spell-checker',
         "             \ 'coc-snippets',
         "             \ ] " add extensions automatically on new computers
+        " let g:coc_global_extensions = [
+        "             \ 'coc-clangd', 'coc-cmake', 'coc-java', 'coc-markdownlint', 'coc-pyright', 'coc-sh', 'coc-texlab',
+        "             \ ] " add extensions automatically on new computers
+        let g:coc_global_extensions = [
+                    \ 'coc-vimlsp',
+                    \ 'coc-highlight',
+                    \ 'coc-json',
+                    \ 'coc-marketplace',
+                    \ 'coc-spell-checker',
+                    \ 'coc-snippets',
+                    \ ] " add extensions automatically on new computers
         "
         " coc-explorer
         " coc-translator
@@ -282,9 +292,9 @@
         " diagnostics appear/become resolved.
         if has("nvim-0.5.0") || has("patch-8.1.1564")
         " Recently vim can merge signcolumn and number column into one
-        set signcolumn=number
+            set signcolumn=number
         else
-        set signcolumn=yes
+            set signcolumn=yes
         endif
 
         " Use tab for trigger completion with characters ahead and navigate.
@@ -378,12 +388,12 @@
 
         " Remap <C-f> and <C-b> for scroll float windows/popups.
         if has('nvim-0.4.0') || has('patch-8.2.0750')
-        nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-        nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-        inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-        inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-        vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-        vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+            nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+            nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+            inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+            inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+            vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+            vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
         endif
 
         " Use CTRL-S for selections ranges.
@@ -407,43 +417,67 @@
 
         " Mappings for CoCList
         " Show all diagnostics.
-        nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+        nnoremap <silent><nowait> \a  :<C-u>CocList diagnostics<cr>
         " Manage extensions.
-        nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+        nnoremap <silent><nowait> \e  :<C-u>CocList extensions<cr>
         " Show commands.
-        nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+        nnoremap <silent><nowait> \c  :<C-u>CocList commands<cr>
         " Find symbol of current document.
-        nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+        nnoremap <silent><nowait> \o  :<C-u>CocList outline<cr>
         " Search workspace symbols.
-        nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+        nnoremap <silent><nowait> \s  :<C-u>CocList -I symbols<cr>
         " Do default action for next item.
-        nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+        nnoremap <silent><nowait> \j  :<C-u>CocNext<CR>
         " Do default action for previous item.
-        nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+        nnoremap <silent><nowait> \k  :<C-u>CocPrev<CR>
         " Resume latest coc list.
-        nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+        nnoremap <silent><nowait> \p  :<C-u>CocListResume<CR>
 
         " " used for showing recommendations of coc-spell-checker
-        vmap <silent><leader>a <Plug>(coc-codeaction-selected)
+        " vmap <silent><nowait> <leader>a <Plug>(coc-codeaction-selected)
+        " Use <leader>aw instead
 
         " Use <C-j> for select text for visual placeholder of snippet.
         imap <C-l> <Plug>(coc-snippets-expand)
         vmap <C-j> <Plug>(coc-snippets-select)
         " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-        let g:coc_snippet_next = '<c-j>'
+        " let g:coc_snippet_next = '<c-j>'
+        let g:coc_snippet_next = '<c-l>'
         " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-        let g:coc_snippet_prev = '<c-k>'
+        " let g:coc_snippet_prev = '<c-k>'
+        let g:coc_snippet_prev = '<c-h>'
         " Use <C-j> for both expand and jump (make expand higher priority.)
         imap <C-j> <Plug>(coc-snippets-expand-jump)
         let g:snips_author = 'Zexi Li'
 
+        " -----------------------
+        " --- coc.actions
+        " -----------------------
+            " Remap for do codeAction of selected region
+            " function! s:cocActionsOpenFromSelected(type) abort
+            "   execute 'CocCommand actions.open ' . a:type
+            " endfunction
+            " xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+            " nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+        " -----------------------
+        " --- coc.vimlsp
+        " -----------------------
+            let g:markdown_fenced_languages = [
+                \ 'vim',
+                \ 'help'
+                \]
+
+        " -----------------------
+        " --- coc.highlight
+        " -----------------------
+        autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " --------------------------------------------------------------------------------
 " |                                                                              |
 " |                                     TEMP                                     |
 " |                                                                              |
 " --------------------------------------------------------------------------------
-
-" nnoremap <leader>ld :source ~/.config/nvim/init.vim<CR>
-" TODO: some plugins change the setting
-    set signcolumn=auto:4
+    " nnoremap <leader>ld :source ~/.config/nvim/init.vim<CR>
+    " TODO: some plugins change the setting
+        set signcolumn=auto:4

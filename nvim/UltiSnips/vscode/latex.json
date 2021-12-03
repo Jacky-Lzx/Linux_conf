@@ -1,0 +1,552 @@
+{
+	"temp":{
+		"prefix": "ee",
+		"body": "\\e^{$1j${2:k}\\omega_0t} $0"
+	},
+	"ww":{
+		"prefix": "ww",
+		"body": "\\omega_0 "
+	},
+
+	"enumerate":{
+		"prefix": "enumerate",
+		"body":[
+			"\\begin{enumerate}[${1:label = \\arabic*}]",
+				"\t\\item $0",
+			"\\end{enumerate}"
+		]
+	},
+	"itemize":{
+		"prefix": "itemize",
+		"body":[
+			"\\begin{itemize}[leftmargin = 1cm]",
+				"\t\\item $0",
+			"\\end{itemize}"
+		]
+	},
+	"verbatim":{
+		"prefix": ["command","verbatim"],
+		"body": [
+			"\\begin{verbatim}",
+				"\t$0",
+			"\\end{verbatim}"
+		]
+	},
+
+
+	"In-line math blocks":{
+		"prefix": "mk",
+		"body": [
+			"$${1:$TM_SELECTED_TEXT}$$0"
+		]
+	},
+	"Multi-line math blocks":{
+		"prefix": "dm",
+		"body":[
+			"\\[",
+				"\t${1:$TM_SELECTED_TEXT}",
+			".\\] $0"
+		]
+	},
+
+
+	"array":{
+		"prefix": "array",
+		"body": [
+			"\\begin{array}{${1:ll}}",
+				"\t$0",
+			"\\end{array}",
+		]
+	},
+	"aligned equation":{
+		"prefix": "aligned",
+		"body": [
+			"\\begin{aligned}",
+				"\t$0",
+			"\\end{aligned}",
+		]
+	},
+	"equation":{
+		"prefix": "equation",
+		"body": [
+			"\\begin{equation*}",
+			"\t$0",
+			"\\end{equation*}",
+		]
+	},
+
+	"prime":{
+		"prefix": "''",
+		"body": "^\\prime $0"
+	},
+	"implies":{
+		"prefix": "=>",
+		"body": "\\Rightarrow $0"
+	},
+	"long implies":{
+		"prefix": "==>",
+		"body": "\\implies $0"
+	},
+	"equivalence":{
+		"prefix": "<=>",
+		"body": "\\Leftrightarrow $0"
+	},
+	"long equivalence":{
+		"prefix": "<==>",
+		"body": "\\iff $0"
+	},
+	"land":{
+		"prefix": "and",
+		"body": "\\land $0"
+	},
+	"lor":{
+		"prefix": "or",
+		"body": "\\lor $0"
+	},
+	"lnot":{
+		"prefix": "not",
+		"body": "\\lnot $0"
+	},
+	"exist":{
+		"prefix": "EE",
+		"body": "\\exists $0"
+	},
+	"for all":{
+		"prefix": "AA",
+		"body": "\\forall $0"
+	},
+	"cap":{
+		"prefix":["NN", "intersect"],
+		"body": "\\cap $0"
+	},
+	"cup":{
+		"prefix":["UU", "union"],
+		"body": "\\cup $0"
+	},
+	"in":{
+		"prefix": "in",
+		"body": "\\in $0"
+	},
+	"not in":{
+		"prefix": "notin",
+		"body": "\\notin $0"
+	},
+	/* "set minus":{
+		"prefix": "\\",
+		"body": "\\setminus $0"
+	} */
+	"less and equal":{
+		"prefix": "<=",
+		"body": "\\le $0"
+	},
+	"greater and equal":{
+		"prefix": ">=",
+		"body": "\\ge $0"
+	},
+	"gg":{
+		"prefix": ">>",
+		"body": "\\gg $0"
+	},
+	"ll":{
+		"prefix": "<<",
+		"body": "\\ll $0"
+	},
+	"not equals":{
+		"prefix": "!=",
+		"body": "\\neq $0"
+	},
+	"equivalence of two number":{
+		"prefix": "===",
+		"body": "\\equiv $0"
+	},
+	"used in aligned equation":{
+		"prefix": "==",
+		"body": "&= $0"
+	},
+
+
+
+	"bar":{
+		"prefix": ["bar", "overline"],
+		"body": "\\overline{$1} $0"
+	},
+	"hat":{
+		"prefix": "hat",
+		"body": "\\hat{$1} $0"
+	},
+	"vector":{
+		"prefix": "vector",
+		"body": "\\vec{$1} $0"
+	},
+	"angle":{
+		"prefix": "angle",
+		"body": "\\angle $0"
+	},
+
+
+	"+-":{
+		"prefix": "+-",
+		"body": "\\pm $0"
+	},
+	"-+":{
+		"prefix": "-+",
+		"body": "\\mp $0"
+	},
+	"dot":{
+		"prefix": "'.",
+		"body": "\\dot{$1} $0"
+	},
+	"ddot":{
+		"prefix": "'..",
+		"body": "\\ddot{$1} $0"
+	},
+	"times":{
+		"prefix": "xx",
+		"body": "\\times $0"
+	},
+	"sqrt":{
+		"prefix": "sqrt",
+		"body": "\\sqrt{$1} $0"
+	},
+	"square":{
+		"prefix":["sr", "square"],
+		"body": "^2 $0"
+	},
+	"cube":{
+		"prefix": ["cube", "cb"],
+		"body": "^3 $0"
+	},
+	"fraction":{
+		"prefix": ["frac", "/"],
+		"body": "\\frac{${1:1}}{$2} $0"
+	},
+	"degree":{
+		"prefix": "degree",
+		"body": "^\\circ $0"
+	},
+	"\\;":{
+		"prefix": ";;",
+		"body": "\\; $0"
+	},
+	"\\:":{
+		"prefix": "::",
+		"body": "\\: $0"
+	},
+
+
+
+	"resize":{
+		"prefix": ["resize-box", "resize"],
+		"body": [
+			"\\resizebox*{\\textwidth}{!}{ %",
+				"\t$0",
+			"}",
+			]
+	},
+	"shrink/scale":{
+		"prefix": ["shrink", "scale"],
+		"body": [
+			"\\scalebox{0.8}{",
+				"\t% \\hspace{-4em}",
+				"\t$0",
+			"}",
+			]
+	},
+	"tabular":{
+		"prefix": ["tabular", "table"],
+		"body": [
+			"\\begin{table}[H]",
+				"\t\\centering",
+				"\t\\begin{tabular}{${3:cc}}",
+					"\t\t$0",
+				"\t\\end{tabular}",
+				"\t\\caption{${1:caption}}",
+				"\t\\label{tab:${2:label}}",
+			"\\end{table}"
+		]
+	},
+	"figure":{
+		"prefix": "figure",
+		"body": [
+			"\\begin{figure}[H]",
+				"\t\\centering",
+				"\t\\includegraphics[width=0.6\\linewidth]{$1}",
+				"\t\\caption{${3:caption}}",
+				"\t\\label{fig:${4:$1}}",
+			"\\end{figure}",
+			"$0"
+		]
+	},
+	"includeGraphics":{
+		"prefix": "includegraphics",
+		"body": "\\includegraphics[width=0.8\\columnwidth]{$1}$0"
+	},
+	"minipage":{
+		"prefix": "minipage",
+		"body": [
+			"\\begin{minipage}{\\linewidth}",
+				"\t$0",
+			"\\end{minipage}",
+		]
+	},
+
+
+	"hline":{
+		"prefix": "hl",
+		"body": "\\hline$0"
+	},
+
+
+	"left-right-()": {
+		"prefix": ["lr", "lr()"],
+		"body": "\\left( $1 \\right) $0"
+	},
+	"left-right-[]":{
+		"prefix": "lr[]",
+		"body": "\\left[ $1 \\right] $0"
+	},
+	"left-right-{}":{
+		"prefix": "lr{}",
+		"body": "\\left\\{ $1 \\right\\} $0"
+	},
+	"left-right-||":{
+		"prefix": "lr||",
+		"body": "\\left| $1 \\right| $0"
+	},
+	"left-right-<>":{
+		"prefix": "lr<>",
+		"body": "\\left< $1 \\right> $0"
+	},
+
+
+
+	"pmatrix":{
+		"prefix": "matrix()",
+		"body": [
+			"\\begin{pmatrix}",
+				"\t$0",
+			"\\end{pmatrix}"
+		],
+		"description": "The matrix '()' characters"
+	},
+	"bmatrix":{
+		"prefix": "matrix[]",
+		"body": [
+			"\\begin{bmatrix}",
+				"\t$0",
+			"\\end{bmatrix}"
+		],
+		"description": "The matrix with '[]' characters"
+	},
+	"matrix":{
+		"prefix": "matrix",
+		"body": [
+			"\\begin{matrix}",
+				"\t$0",
+			"\\end{matrix}"
+		],
+		"description": "The matrix without close characters"
+	},
+
+
+	"integral":{
+		"prefix": ["int", "integral"],
+		"body": "\\int_{${1:-\\infty}}^{${2:\\infty}} $0"
+	},
+	"sum":{
+		"prefix": "sum",
+		"body": "\\sum_{${1:k=-\\infty}}^{${2:\\infty}} $0"
+	},
+	"limit":{
+		"prefix": "lim",
+		"body": "\\lim_{${1:n} \\to ${2:\\infty}} $0"
+	},
+	"partial differention":{
+		"prefix": "part",
+		"body": "\\frac{\\partial ${1:V}}{\\partial ${2:x}} $0"
+	},
+	"infinity":{
+		"prefix": ["inf", "ooo"],
+		"body": "\\infty"
+	},
+	"derivative":{
+		"prefix":["derivative-first, differential-first"],
+		"body": "\\frac{\\mathrm{d}}{\\mathrm{d} ${2:t}} $0"
+	},
+	// "2-derivative":{
+	// 	"prefix":["derivative-second, differential-second"],
+	// 	"body": "\\frac{\\mathrm{d}^2 ${1:f(x)}}{\\mathrm{d} ${2:x}^2} $0"
+	// },
+
+
+
+	"text":{
+		"prefix": ["text", "tt"],
+		"body": "\\text{$1} $0"
+	},
+
+
+	// Color
+	"text-red":{
+		"prefix": ["red"],
+		"body": "\\textcolor{red}{$1} $0"
+	},
+	"text-magenta":{
+		"prefix": ["magenta"],
+		"body": "\\textcolor{magenta}{$1} $0"
+	},
+
+
+
+	/** ------ Greek Alphabet ------ */ 
+	"alpha": {
+		"prefix": "'a",
+		"body": "\\alpha $0"
+	},
+	"beta": {
+		"prefix": "'b",
+		"body": "\\beta $0"
+	},
+	"gamma": {
+		"prefix": "'g",
+		"body": "\\gamma $0"
+	},
+	"delta": {
+		"prefix": "'d",
+		"body": "\\delta $0"
+	},
+	"epsilon": {
+		"prefix": "'ep",
+		"body": "\\epsilon $0"
+	},
+	"varepsilon": {
+		"prefix": "'ve",
+		"body": "\\varepsilon $0"
+	},
+	"zeta": {
+		"prefix": "'z",
+		"body": "\\zeta $0"
+	},
+	"eta": {
+		"prefix": "'et",
+		"body": "\\eta $0"
+	},
+	"theta": {
+		"prefix": "'t",
+		"body": "\\theta $0"
+	},
+	"vartheta": {
+		"prefix": "'vt",
+		"body": "\\vartheta $0"
+	},
+	"iota": {
+		"prefix": "'i",
+		"body": "\\iota $0"
+	},
+	"lambda": {
+		"prefix": "'l",
+		"body": "\\lambda $0"
+	},
+	"mu": {
+		"prefix": "'m",
+		"body": "\\mu $0"
+	},
+	"nu": {
+		"prefix": "'n",
+		"body": "\\nu $0"
+	},
+	"xi": {
+		"prefix": "'x",
+		"body": "\\xi $0"
+	},
+	"pi": {
+		"prefix": "'pi",
+		"body": "\\pi $0"
+	},
+	"rho": {
+		"prefix": "'r",
+		"body": "\\rho $0"
+	},
+	"varrho": {
+		"prefix": "'vr",
+		"body": "\\varrho $0"
+	},
+	"sigma": {
+		"prefix": "'s",
+		"body": "\\sigma $0"
+	},
+	"varsigma": {
+		"prefix": "'vs",
+		"body": "\\varsigma $0"
+	},
+	"upsilon": {
+		"prefix": "'u",
+		"body": "\\upsilon $0"
+	},
+	"phi": {
+		"prefix": "'ph",
+		"body": "\\phi $0"
+	},
+	"varphi": {
+		"prefix": "'vph",
+		"body": "\\varphi $0"
+	},
+	"psi": {
+		"prefix": "'ps",
+		"body": "\\psi $0"
+	},
+	"omega": {
+		"prefix": "'o",
+		"body": "\\omega $0"
+	},
+	"Gamma": {
+		"prefix": "'G",
+		"body": "\\Gamma $0"
+	},
+	"Delta": {
+		"prefix": "'D",
+		"body": "\\Delta $0"
+	},
+	"Theta": {
+		"prefix": "'T",
+		"body": "\\Theta $0"
+	},
+	"Lambda": {
+		"prefix": "'L",
+		"body": "\\Lambda $0"
+	},
+	"Xi": {
+		"prefix": "'X",
+		"body": "\\Xi $0"
+	},
+	"Pi": {
+		"prefix": "'Pi",
+		"body": "\\Pi $0"
+	},
+	"Sigma": {
+		"prefix": "'S",
+		"body": "\\Sigma $0"
+	},
+	"Phi": {
+		"prefix": "'Ph",
+		"body": "\\Phi $0"
+	},
+	"Psi": {
+		"prefix": "'Ps",
+		"body": "\\Psi $0"
+	},
+	"Omega": {
+		"prefix": "'O",
+		"body": "\\Omega $0"
+	},
+
+	// Beamer:
+	"frame": {
+		"prefix": "frame",
+		"body": [
+			"\\begin{frame} \\frametitle{$1}",
+				"\t$0",
+			"\\end{frame}"
+		]
+	}
+}
