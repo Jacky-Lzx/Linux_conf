@@ -5,16 +5,32 @@ Write once, debug everywhere.
 
 # Cheat sheet
 
-## coc-spell-checker
+## undotree
 
-`<leader>aap` for current paragraph
-`<leader>aw` for current word
+`nnoremap <leader>ut` - open the undotree and focus
 
-## coc-marketplace
+## coc.nvim
+
+### general
+
+`xmap <leader>a <Plug>(coc-codeaction-selected)`
+
+### coc-spell-checker
+
+`vmap <leader>a` - show code actions
+
+### coc-marketplace
 
 `:CocList marketplace`
 
-## coc-lists
+### coc-lists
 
 `:CocList <TAB>`
+
+### coc-translator
+
+`nmap <leader>tr` - translate a word
+
+`vmap <leader>tr` - translate selected word
+
 
