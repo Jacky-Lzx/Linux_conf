@@ -48,6 +48,11 @@
         "snippet": "\ue796",
         "typeParameter": "\uf728",
         "default": "\uf29c"
-    }
+    },
 
+    "translator.engines": [
+        "bing",
+        "youdao",
+        "haici"
+    ]
 }

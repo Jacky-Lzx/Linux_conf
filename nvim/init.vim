@@ -267,9 +267,9 @@
                     \ 'coc-lists',
                     \ 'coc-git',
                     \ 'coc-pairs',
+                    \ 'coc-clangd',
+                    \ 'coc-translator',
                     \ ] " add extensions automatically on new computers
-        "
-        " coc-lists
         " coc-explorer
         " coc-translator
 
@@ -473,6 +473,20 @@
         " --- coc.highlight
         " -----------------------
             " autocmd CursorHold * silent call CocActionAsync('highlight')
+
+        " -----------------------
+        " --- coc.translator
+        " -----------------------
+            " NOTE: do NOT use `nore` mappings
+            " popup
+            nmap <Leader>tr <Plug>(coc-translator-p)
+            vmap <Leader>tr <Plug>(coc-translator-pv)
+            " echo
+            " nmap <Leader>e <Plug>(coc-translator-e)
+            " vmap <Leader>e <Plug>(coc-translator-ev)
+            " replace
+            " nmap <Leader>r <Plug>(coc-translator-r)
+            " vmap <Leader>r <Plug>(coc-translator-rv)
 
 " --------------------------------------------------------------------------------
 " |                                                                              |
