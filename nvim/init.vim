@@ -45,8 +45,8 @@
         " Plug 'SirVer/ultisnips' " track the engine.
         Plug 'honza/vim-snippets' " Snippets are separated from the engine.
 
-        " Plug 'ryanoasis/vim-devicons'
-        Plug 'junegunn/vim-peekaboo' " show registers when pasting
+        Plug 'ryanoasis/vim-devicons'
+        Plug 'junegunn/vim-peekaboo' " ✓ show registers when pasting
     call plug#end()
     " lua require('plugins') " packer
 
@@ -101,7 +101,7 @@
 
         set conceallevel=2 " set conceal level to hide special characters
         set concealcursor= " the characters on current line should not be concealed. can be changed to inc
-        set mouse=a
+        set mouse=a " enable mouse
         " TODO: not sort yet
         let mapleader = ' ' " set leader key to <space>
         set history=2000 " history : how many lines of history VIM has to remember
@@ -129,14 +129,14 @@
         set shiftwidth=4
 
         " encodings
-        set encoding=utf-8
+        " set encoding=utf-8 " no need to set this as neovim uses it by default
         set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
         set termencoding=utf-8
         set ffs=unix,dos,mac
         set formatoptions+=m
         set formatoptions+=B
 
-        set backspace=indent,eol,start " to solve the problem that backspace cannot delete things (note CTRL-I is the same as <Tab>)
+        " set backspace=indent,eol,start " to solve the problem that backspace cannot delete things (note CTRL-I is the same as <Tab>)
         set ignorecase
         set smartcase
         set hlsearch " highlight search results when searching
@@ -150,9 +150,6 @@
 " |                                                                              |
 " --------------------------------------------------------------------------------
 
-    " nmap <C-_> iecho "hello world"<ESC>
-    " nmap <leader>m iecho "hello world"<ESC>
-
 
 " --------------------------------------------------------------------------------
 " |                                                                              |
@@ -162,20 +159,20 @@
     " -----------------------
     " --- plug.ultisnips
     " -----------------------
-    " " use coc-snippets for showing in float window "
+    " " use coc-snippets instead for showing in float window "
         " let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips'] " specify the path, to just load snippets under this file for speedup.
-        " " " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
-        " " " - https://github.com/Valloric/YouCompleteMe
-        " " " - https://github.com/nvim-lua/completion-nvim
-        " " let g:UltiSnipsExpandTrigger="<c-/>"
+        " " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+        " " - https://github.com/Valloric/YouCompleteMe
+        " " - https://github.com/nvim-lua/completion-nvim
+        " let g:UltiSnipsExpandTrigger="<c-/>"
         " let g:UltiSnipsExpandTrigger="<c-_>"
         " let g:UltiSnipsJumpForwardTrigger="<c-l>"
         " let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-        " " let g:UltiSnipsJumpForwardTrigger="<tab>"
-        " " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+        " let g:UltiSnipsJumpForwardTrigger="<tab>"
+        " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
         " " If you want :UltiSnipsEdit to split your window.
         " let g:UltiSnipsEditSplit="vertical"
-        " " let g:UltiSnipsListSnippets="<M-/>"
+        " let g:UltiSnipsListSnippets="<M-/>"
     " -----------------------
     " --- plug.easymotion
     " -----------------------

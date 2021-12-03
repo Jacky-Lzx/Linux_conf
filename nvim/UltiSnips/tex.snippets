@@ -1,3 +1,6 @@
+
+/mnt/c/Users/11741/AppData/Roaming/Code/User/snippets/latex.json
+
 snippet frame "frame in beamer"
 \\begin{frame} \\frametitle{$1}
 	$0
@@ -8,7 +11,7 @@ snippet xor "xor"
 \\oplus 
 endsnippet
 
-snippet question
+snippet question "homework template"
 %----------------------------------------------------------------------------
 %   QUESTION $1"
 %----------------------------------------------------------------------------
@@ -18,3 +21,30 @@ snippet question
 \\end{question}
 endsnippet
 
+snippet answer "homework template"
+\\begin{answer}
+	$0
+\\end{answer}
+endsnippet
+
+snippet subquestion "homework template"
+\\begin{subquestion}
+	\\begin{answer}
+	\\end{answer}
+\\end{subquestion}
+endsnippet
+
+snippet subsubquestion "homework template"
+\\begin{subsubquestion}
+	\\begin{answer}
+	\\end{answer}
+\\end{subsubquestion}
+endsnippet
+
+snippet big-bracket "bit-bracket in math mode"
+\\left\\{
+	\\begin{aligned}
+		$0
+	\\end{aligned}
+\\right.
+endsnippet
