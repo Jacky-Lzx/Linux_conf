@@ -6,7 +6,7 @@
 
 cp -r ./nvim $HOME/.config/
 
-cp plug.vim $HOME/.local/share/nvim/site/autoload/
+mkdir -p $HOME/.local/share/nvim/site/autoload && cp plug.vim $HOME/.local/share/nvim/site/autoload/
 
 cp -r ./ranger $HOME/.config/
 

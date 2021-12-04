@@ -2,43 +2,64 @@
 
 Write once, debug everywhere.
 
+## Installation guide
 
-# Cheat sheet
+## Prerequisite
 
-## undotree
+1. brew
+    (prerequisite of lazygit and git-delta)
+    quickgit: change the source in ./install.sh
+1. git-delta
+    (prerequisite of lazygit)
+1. lazygit
+
+1. neovim
+    (version >= 0.5.0)
+1. node.js
+    (prerequisite of coc extensions)
+1. ranger
+1. nerd fonts
+    (Sauce Code Pro Semibold Nerd Font for me)
+1. ranger\_devicon
+    (fancy icons for neovim and ranger)
+1. fdfind
+    (prerequisite of fzf)
+1. fzf
+    (fuzzy file finder)
+
+## Cheat sheet
+
+### undotree
 
 `nnoremap <leader>ut` - open the undotree and focus
 
-## easymotion
+### easymotion
 
 `<leader><leader>s{char}` - find `{char}`
 
-## surround
+### surround
 
+### coc.nvim
 
-
-## coc.nvim
-
-### general
+#### general
 
 `xmap <leader>a <Plug>(coc-codeaction-selected)`
 
-### coc-spell-checker
+#### coc-spell-checker
 
 `vmap <leader>a` - show code actions
 
-### coc-marketplace
+#### coc-marketplace
 
 `:CocList marketplace`
 
-### coc-lists
+#### coc-lists
 
 `:CocList <TAB>`
 
-### coc-translator
+#### coc-translator
 
 `nmap <leader>tr` - translate a word
 
 `vmap <leader>tr` - translate selected word
-
 
