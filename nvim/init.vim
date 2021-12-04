@@ -170,6 +170,18 @@
         "       \ 'startify#center(startify#fortune#cowsay())'
         "       " \ 'startify#center(startify#fortune#boxed())'
 
+    let g:ascii = [
+          \ "        o",
+          \ "         o    __  (\\_",
+          \ "          o  (_ \\ ( '>",
+          \ "               ) \\/_)=",
+          \ "               (_(_ )_"
+          \]
+    " let g:startify_custom_header = g:ascii + startify#fortune#boxed()
+    let g:startify_custom_header =
+          \ 'startify#pad(startify#fortune#boxed() + g:ascii)'
+
+
     " -----------------------
     " --- plug.indentline
     " -----------------------
