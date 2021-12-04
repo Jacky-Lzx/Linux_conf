@@ -8,32 +8,6 @@
 		"body": "\\omega_0 "
 	},
 
-	"enumerate":{
-		"prefix": "enumerate",
-		"body":[
-			"\\begin{enumerate}[${1:label = \\arabic*}]",
-				"\t\\item $0",
-			"\\end{enumerate}"
-		]
-	},
-	"itemize":{
-		"prefix": "itemize",
-		"body":[
-			"\\begin{itemize}[leftmargin = 1cm]",
-				"\t\\item $0",
-			"\\end{itemize}"
-		]
-	},
-	"verbatim":{
-		"prefix": ["command","verbatim"],
-		"body": [
-			"\\begin{verbatim}",
-				"\t$0",
-			"\\end{verbatim}"
-		]
-	},
-
-
 	"In-line math blocks":{
 		"prefix": "mk",
 		"body": [

@@ -9,6 +9,14 @@ Write once, debug everywhere.
 
 `nnoremap <leader>ut` - open the undotree and focus
 
+## easymotion
+
+`<leader><leader>s{char}` - find `{char}`
+
+## surround
+
+
+
 ## coc.nvim
 
 ### general

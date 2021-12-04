@@ -70,12 +70,21 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# plugins=(
+#     git
+#     zsh-autosuggestions
+#     zsh-syntax-highlighting
+#     z
+#     sudo
+#     vi-mode
+#     command-not-found
+#     colored-man-pages
+# )
 plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
     z
-    sudo
     vi-mode
     command-not-found
     colored-man-pages
@@ -121,16 +130,46 @@ alias j="z"
 bindkey -v
 # export KEYTIMEOUT=1
 
-
-# export TERM=xterm-256color # solve the issue that zsh-autosuggestions has wrong highlight in tmux
+source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # fzf settings
 # export FZF_DEFAULT_OPTS='--bind=ctrl-t:top,change:top --bind ctrl-e:down,ctrl-u:up'
-#export FZF_DEFAULT_OPTS='--bind ctrl-e:down,ctrl-u:up --preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500"'
-#export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-# export FZF_DEFAULT_COMMAND='fd'
-export FZF_COMPLETION_TRIGGER='\'
+# export FZF_DEFAULT_OPTS='--bind ctrl-e:down,ctrl-u:up --preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500"'
+# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# # export FZF_DEFAULT_COMMAND='fd'
+# Not work, don't know why
+# export FZF_COMPLETION_TRIGGER='\'
 # export FZF_TMUX=1
 # export FZF_TMUX_HEIGHT='80%'
 # export fzf_preview_cmd='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500'
+# export FZF_DEFAULT_COMMAND='fd --type f'
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+# FZF_IN_WSL=''
+# if uname -r | grep -q 'WSL' ; then
+#     export FZF_IN_WSL='/mnt/c/Users/11741'
+# fi
+
+# export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build} --type f"
+#
+
+# Search current directory and $HOME directory
+
+export FZF_DEFAULT_COMMAND="fd --hidden --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build} --type f --type d . '.' '$HOME'"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
+
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_CTRL_T_OPTS=$FZF_DEFAULT_OPTS
+
+export FZF_ALT_C_COMMAND="fd --hidden --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build} --type d . '.' '$HOME'"
+export FZF_ALT_C_OPTS="--height 40% --layout=reverse"
+
+# zstyle ':autocomplete:tab:*' completion fzf
+
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='~~'
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
 

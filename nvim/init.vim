@@ -157,24 +157,6 @@
 " |                                                                              |
 " --------------------------------------------------------------------------------
     " -----------------------
-    " --- plug.ultisnips
-    " -----------------------
-        " " use coc-snippets instead for showing in float window "
-        " let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips'] " specify the path, to just load snippets under this file for speedup.
-        " " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
-        " " - https://github.com/Valloric/YouCompleteMe
-        " " - https://github.com/nvim-lua/completion-nvim
-        " let g:UltiSnipsExpandTrigger="<c-/>"
-        " let g:UltiSnipsExpandTrigger="<c-_>"
-        " let g:UltiSnipsJumpForwardTrigger="<c-l>"
-        " let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-        " let g:UltiSnipsJumpForwardTrigger="<tab>"
-        " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-        " " If you want :UltiSnipsEdit to split your window.
-        " let g:UltiSnipsEditSplit="vertical"
-        " let g:UltiSnipsListSnippets="<M-/>"
-
-    " -----------------------
     " --- plug.easymotion
     " -----------------------
         let g:EasyMotion_smartcase = 1 " turn on case-insensitive feature
@@ -194,20 +176,11 @@
         " let g:indentLine_char = '│' " set single character to show indentation
         let g:indentLine_char_list = ['│', '¦', '┆', '┊'] " set multiple characters to display different level of indentation
         let g:indentLine_setConceal = 0 " don't change current conceal setting
-        " let g:indentLine_concealcursor = ''
-        " let g:indentLine_conceallevel = 2
 
     " -----------------------
     " --- plug.surround
     " -----------------------
         lua require"surround".setup{}
-
-    " -----------------------
-    " --- plug.floaterm
-    " -----------------------
-        " nnoremap \t  :FloatermToggle<CR>
-        " noremap! \t  <Esc>:FloatermToggle<CR>
-        " tnoremap \t  <C-\><C-n>:FloatermToggle<CR>
 
     " -----------------------
     " --- plug.airline
@@ -225,6 +198,7 @@
                 \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
                 \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
             \ ]
+        " TODO: no effects ?
         let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
         let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
@@ -290,7 +264,7 @@
         set shortmess+=c
 
         " Always show the signcolumn, otherwise it would shift the text each time diagnostics appear/become resolved.
-        set signcolumn=yes
+        set signcolumn=auto:1-3
 
         " Use tab for trigger completion with characters ahead and navigate.
         " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -364,7 +338,7 @@
         " Remap keys for applying codeAction to the current buffer.
         " nmap <leader>ac  <Plug>(coc-codeaction)
         " Apply AutoFix to problem on the current line.
-        xmap <leader>qf  <Plug>(coc-fix-current)
+        " xmap <leader>qf  <Plug>(coc-fix-current)
         " nmap <leader>qf  <Plug>(coc-fix-current)
 
         " Map function and class text objects
