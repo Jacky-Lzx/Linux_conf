@@ -4,11 +4,15 @@
     "coc.preferences.enableFloatHighlight": true,
     // "coc.preferences.snippetStatusText": "*",
     "diagnostic.checkCurrentLine": false, // show error on cursor line
-    // "diagnostic.signOffset": 1,
+    "diagnostic.signOffset": 1,
     "diagnostic.errorSign":"✘",
     "diagnostic.warningSign": "\uf071",
-    "diagnostic.infoSign": "♪",
+    "diagnostic.infoSign": "\uf05a",
     "diagnostic.hintSign": "✓",
+    // diagnostic.errorSign":"\uf05a",
+    //"diagnostic.warningSign": "\uf05a",
+    //"diagnostic.infoSign": "\uf05a",
+    //"diagnostic.hintSign": "\uf05a",
     "diagnostic.displayByAle": false,
     "diagnostic.refreshOnInsertMode": false,
     "snippets.ultisnips.directories": [
