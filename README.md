@@ -9,6 +9,7 @@ Write once, debug everywhere.
 1. brew
     (prerequisite of lazygit and git-delta)
     quickgit: change the source in ./install.sh
+    fail and fix: see <https://www.jianshu.com/p/b2de788c3c6d>
 1. git-delta
     (prerequisite of lazygit)
 1. lazygit

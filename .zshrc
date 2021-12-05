@@ -126,8 +126,11 @@ alias start="explorer.exe"
 alias ra="ranger"
 alias vim="nvim"
 alias j="z"
+alias sz="source ~/.zshrc"
+alias ez="nvim ~/.zshrc"
 
 bindkey -v
+alias lg="lazygit"
 # export KEYTIMEOUT=1
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
