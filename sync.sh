@@ -20,3 +20,5 @@ cp $HOME/.tmux.conf ./
 
 cp $HOME/.zshrc ./
 
+cp $HOME/.p10k.zsh ./
+
