@@ -4,7 +4,13 @@ Write once, debug everywhere.
 
 ## Installation guide
 
-## Prerequisite
+### Prerequisite
+
+1. universal ctags
+    (used by vista)
+
+1. neofetch
+    (optional)
 
 1. oh my zsh
 1. powerlevel10k

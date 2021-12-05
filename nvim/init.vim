@@ -30,6 +30,7 @@
         " --- functional
         " -----------------------
         " Plug 'preservim/nerdtree'
+        Plug 'liuchengxu/vista.vim'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'easymotion/vim-easymotion' " ✓
         Plug 'Yggdroot/indentLine' " ✓
@@ -172,18 +173,21 @@
         " let g:startify_custom_header =
         "       \ 'startify#center(startify#fortune#cowsay())'
         "       " \ 'startify#center(startify#fortune#boxed())'
+        let g:ascii = [
+            \ "        o",
+            \ "         o    __  (\\_",
+            \ "          o  (_ \\ ( '>",
+            \ "               ) \\/_)=",
+            \ "               (_(_ )_"
+            \]
+        " let g:startify_custom_header = g:ascii + startify#fortune#boxed()
+        let g:startify_custom_header =
+            \ 'startify#pad(startify#fortune#boxed() + g:ascii)'
 
-    let g:ascii = [
-          \ "        o",
-          \ "         o    __  (\\_",
-          \ "          o  (_ \\ ( '>",
-          \ "               ) \\/_)=",
-          \ "               (_(_ )_"
-          \]
-    " let g:startify_custom_header = g:ascii + startify#fortune#boxed()
-    let g:startify_custom_header =
-          \ 'startify#pad(startify#fortune#boxed() + g:ascii)'
-
+    " -----------------------
+    " --- plug.vista
+    " -----------------------
+        noremap <nowait><silent> <leader>vi :Vista!!<CR>
 
     " -----------------------
     " --- plug.indentline
@@ -214,8 +218,31 @@
                 \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
             \ ]
         " TODO: no effects ?
-        let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-        let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+        " let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+        " let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+            " \   'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
+        let g:rainbow_conf = {
+            \   'guifgs': ['lightyellow', 'lightcyan','lightblue', 'lightmagenta'],
+            \   'ctermfgs': ['lightyellow', 'lightcyan','lightblue', 'lightmagenta'],
+            \   'operators': '_,_',
+            \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+            \   'separately': {
+            \       '*': {},
+            \       'tex': {
+            \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+            \       },
+            \       'lisp': {
+            \           'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
+            \       },
+            \       'vim': {
+            \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+            \       },
+            \       'html': {
+            \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+            \       },
+            \       'css': 0,
+            \   }
+        \}
 
     " -----------------------
     " --- plug.undotree
@@ -248,7 +275,7 @@
         let g:coc_global_extensions = [
                     \ 'coc-vimlsp',
                     \ 'coc-highlight',
-                    \ 'coc-json',
+                    \ 'coc-json', 'coc-tsserver',
                     \ 'coc-marketplace',
                     \ 'coc-spell-checker',
                     \ 'coc-snippets',
