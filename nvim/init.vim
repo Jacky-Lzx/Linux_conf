@@ -94,6 +94,12 @@
         set scrolloff=3 " keep lines when scrolling up and down
         set sidescroll=1 " scroll steps when scrolling left and right
 
+        " set highlight for yank
+        augroup highlight_yank
+            autocmd!
+            au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
+        augroup END
+
 " --------------------------------------------------------------------------------
 " |                                                                              |
 " |                                  FUNCTIONS                                   |
@@ -165,7 +171,7 @@
     " -----------------------
     " let g:gruvbox_material_transparent_background = 1
     " let g:gruvbox_transparent_bg = 1
-    hi Normal ctermbg=NONE guibg=NONE
+    " hi Normal ctermbg=NONE guibg=NONE
     " -----------------------
     " --- plug.easymotion
     " -----------------------
