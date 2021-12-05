@@ -6,6 +6,10 @@ Write once, debug everywhere.
 
 ## Prerequisite
 
+1. oh my zsh
+1. powerlevel10k
+    (theme for oh my zsh)
+
 1. brew
     (prerequisite of lazygit and git-delta)
     quickgit: change the source in ./install.sh
