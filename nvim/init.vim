@@ -161,6 +161,12 @@
 " |                                                                              |
 " --------------------------------------------------------------------------------
     " -----------------------
+    " --- plug.gruvbox
+    " -----------------------
+    " let g:gruvbox_material_transparent_background = 1
+    " let g:gruvbox_transparent_bg = 1
+    hi Normal ctermbg=NONE guibg=NONE
+    " -----------------------
     " --- plug.easymotion
     " -----------------------
         let g:EasyMotion_smartcase = 1 " turn on case-insensitive feature
