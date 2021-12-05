@@ -74,7 +74,7 @@
     " --- appearance
     " -----------------------
         set list
-        set listchars=trail:▫ " show trailing whitespaces
+        set listchars=tab:>-,trail:▫ " show trailing whitespaces
 
         " set cursorcolumn
         set cursorline " show cursor location
