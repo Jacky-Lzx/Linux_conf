@@ -131,7 +131,10 @@ alias pw="powershell.exe"
 alias start="explorer.exe"
 # alias gvim="/mnt/d/Programs/Vim/vim82/gvim.exe"
 # alias tmux="TERM=screen-256color-bce tmux"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ra="ranger"
+# used for ranger to avoid loading default rc twice
+RANGER_LOAD_DEFAULT_RC=FALSE
 alias vim="nvim"
 alias j="z"
 alias sz="source ~/.zshrc"
