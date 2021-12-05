@@ -13,7 +13,7 @@ endsnippet
 
 snippet question "homework template"
 %----------------------------------------------------------------------------
-%   QUESTION $1"
+%   QUESTION $1
 %----------------------------------------------------------------------------
 \\begin{question}
 	\\begin{answer}
@@ -174,9 +174,17 @@ snippet verb
 \\verb|$1|$0
 endsnippet
 
-snippet mk "in-line math balcks" b
+snippet mk "in-line math balcks" A
 $$1$$0
 endsnippet
-snippet dm "multi-line math balcks" b
-$$1$$0
+
+snippet equation
+\begin{equation*}
+	$0
+\end{equation*}
+endsnippet
+snippet aligned
+\begin{aligned}
+	$0
+\end{aligned}
 endsnippet
