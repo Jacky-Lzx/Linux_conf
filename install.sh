@@ -10,6 +10,10 @@ mkdir -p $HOME/.local/share/nvim/site/autoload && cp plug.vim $HOME/.local/share
 
 cp -r ./ranger $HOME/.config/
 
+
+# lazygit setting
+cp ./lazygit/* $HOME/.config/lazygit
+
 cp .tmux.conf $HOME/
 
 cp .zshrc $HOME/
