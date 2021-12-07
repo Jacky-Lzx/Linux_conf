@@ -1,5 +1,8 @@
 {
+    "coc.preferences.extensionUpdateCheck": "daily",
     "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
+    "suggest.noselect": true,
+    "suggest.enablePreselect": false,
     "coc.preferences.semanticTokensHighlights": false,
     "coc.preferences.enableFloatHighlight": true,
     // "coc.preferences.snippetStatusText": "*",
@@ -13,11 +16,10 @@
     //"diagnostic.warningSign": "\uf05a",
     //"diagnostic.infoSign": "\uf05a",
     //"diagnostic.hintSign": "\uf05a",
-    "diagnostic.displayByAle": false,
     "diagnostic.refreshOnInsertMode": false,
     "snippets.ultisnips.directories": [
         "$HOME/.config/nvim/Ultisnips/",
-        "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
+        "$HOME/vimfiles/plugged/vim-snippets/UltiSnips/"
     ],
 
     "cSpell.userWords": [

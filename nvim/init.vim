@@ -301,8 +301,8 @@
         " coc-explorer
         " coc-translator
 
-        " " TextEdit might fail if hidden is not set.
-        " set hidden
+        " TextEdit might fail if hidden is not set.
+        set hidden
 
         " Some servers have issues with backup files, see #649.
         " set nobackup
@@ -385,8 +385,12 @@
         augroup end
 
         " Applying codeAction to the selected region.
-        " Example: `<leader>aap` for current paragraph
+        " Remap for do codeAction of selected region
+        function! s:cocActionsOpenFromSelected(type) abort
+          execute 'CocCommand actions.open ' . a:type
+        endfunction
         xmap <leader>a  <Plug>(coc-codeaction-selected)
+        nmap <leader>aw  <Plug>(coc-codeaction-selected)w
         " nmap <leader>a  <Plug>(coc-codeaction-selected)
 
         " Remap keys for applying codeAction to the current buffer.
