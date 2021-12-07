@@ -2,6 +2,10 @@
 
 Write once, debug everywhere.
 
+**NOTE**: BACKUP your settings beforehand!!!
+
+![preview](figures/preview.jpg)
+
 ## Installation guide
 
 ### Prerequisite
