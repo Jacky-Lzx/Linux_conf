@@ -14,7 +14,6 @@ rm -rf ./nvim/tmp
 # lazygit config
 mkdir lazygit
 cp $HOME/.config/lazygit/config.yml ./lazygit
-cp $HOME/.config/lazygit/state.yml ./lazygit
 
 cp $HOME/.local/share/nvim/site/autoload/plug.vim ./
 

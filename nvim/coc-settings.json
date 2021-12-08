@@ -1,21 +1,14 @@
 {
     "coc.preferences.extensionUpdateCheck": "daily",
     "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
+    "snippets.snipmate.author": "Zexi. Li",
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
-    "coc.preferences.semanticTokensHighlights": false,
-    "coc.preferences.enableFloatHighlight": true,
-    // "coc.preferences.snippetStatusText": "*",
-    "diagnostic.checkCurrentLine": false, // show error on cursor line
-    "diagnostic.signOffset": 1,
+    "coc.preferences.semanticTokensHighlights": true,
     "diagnostic.errorSign":"✘",
     "diagnostic.warningSign": "\uf071",
     "diagnostic.infoSign": "\uf05a",
     "diagnostic.hintSign": "✓",
-    // diagnostic.errorSign":"\uf05a",
-    //"diagnostic.warningSign": "\uf05a",
-    //"diagnostic.infoSign": "\uf05a",
-    //"diagnostic.hintSign": "\uf05a",
     "diagnostic.refreshOnInsertMode": false,
     "snippets.ultisnips.directories": [
         "$HOME/.config/nvim/Ultisnips/",
@@ -51,15 +44,15 @@
         "event": "\ufacd",
         "file": "\uf723",
         "folder": "\uf114",
-        // "snippet": "\ue60b",
         "snippet": "\ue796",
         "typeParameter": "\uf728",
         "default": "\uf29c"
     },
-
     "translator.engines": [
         "bing",
         "youdao",
         "haici"
-    ]
+    ],
+    "suggest.floatConfig": { "shadow": true },
+    "suggest.triggerCompletionWait": 100
 }

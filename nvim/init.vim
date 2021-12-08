@@ -481,7 +481,6 @@
             let g:coc_snippet_prev = '<c-h>'
             " Use <C-j> for both expand and jump (make expand higher priority.)
             imap <C-j> <Plug>(coc-snippets-expand-jump)
-            let g:snips_author = 'Zexi Li'
 
         " -----------------------
         " --- coc.actions
