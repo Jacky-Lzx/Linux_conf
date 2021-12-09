@@ -37,8 +37,7 @@
         Plug 'Yggdroot/indentLine' " ✓
         Plug 'mbbill/undotree' " ✓
 
-        Plug 'blackcauldron7/surround.nvim'
-        "
+        " Plug 'blackcauldron7/surround.nvim'
         "
         Plug 'dstein64/vim-startuptime' " ✓
         " Plug 'voldikss/vim-floaterm' " floating terminal. not used since using terminal
@@ -211,7 +210,7 @@
     " -----------------------
     " --- plug.surround
     " -----------------------
-        lua require"surround".setup{}
+        " lua require"surround".setup{}
 
     " -----------------------
     " --- plug.airline

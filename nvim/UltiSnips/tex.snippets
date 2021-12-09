@@ -188,3 +188,22 @@ snippet aligned
 	$0
 \end{aligned}
 endsnippet
+snippet table
+\\begin{table}[H]
+	\\centering
+	\\begin{tabular}{${3:cc}}
+		$0
+	\\end{tabular}
+	\\caption{${1:caption}}
+	\\label{tab:${2:label}}
+\\end{table}
+endsnippet
+
+snippet figure
+\\begin{figure}[H]
+	\\centering
+	\\includegraphics[width=0.6\\linewidth]{$1}
+	\\caption{${3:caption}}
+	\\label{fig:${4:$1}}
+\\end{figure}
+endsnippet
