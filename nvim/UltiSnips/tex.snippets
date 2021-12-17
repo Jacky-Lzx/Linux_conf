@@ -132,29 +132,29 @@ endsnippet
 
 snippet subcaption " use 'subcaption' package first "
 \\begin{figure}[H]
-\t\\centering
-\t\\begin{subfigure}[b]{0.45\\linewidth}
-\t\t\\centering
-\t\t\\includegraphics[width=0.9\\linewidth]{$1}
-\t\t\\caption{$2}
-\t\t\\label{subfig:${3:$1}}
-\t\\end{subfigure}
-\t\\begin{subfigure}[b]{0.45\\linewidth}
-\t\t\\centering
-\t\t\\includegraphics[width=0.9\\linewidth]{$4}
-\t\t\\caption{$5}
-\t\t\\label{subfig:${6:$4}}
-\t\\end{subfigure}
-\t\\caption{$7}
-\t\\label{fig:$8}
+	\\centering
+	\\begin{subfigure}[b]{0.45\\linewidth}
+		\\centering
+		\\includegraphics[width=0.9\\linewidth]{$1}
+		\\caption{$2}
+		\\label{subfig:${3:$1}}
+	\\end{subfigure}
+	\\begin{subfigure}[b]{0.45\\linewidth}
+		\\centering
+		\\includegraphics[width=0.9\\linewidth]{$4}
+		\\caption{$5}
+		\\label{subfig:${6:$4}}
+	\\end{subfigure}
+	\\caption{$7}
+	\\label{fig:$8}
 \\end{figure}
 endsnippet
 snippet subfigure-simple
 \\begin{subfigure}[b]{0.45\\linewidth}
-\t\\centering
-\t\\includegraphics[width=0.9\\linewidth]{$1}
-\t\\caption{$2}
-\t\\label{subfig:${3:$1}}
+	\\centering
+	\\includegraphics[width=0.9\\linewidth]{$1}
+	\\caption{$2}
+	\\label{subfig:${3:$1}}
 \\end{subfigure}
 endsnippet
 
