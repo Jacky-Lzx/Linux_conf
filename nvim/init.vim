@@ -150,6 +150,21 @@
 
         set autochdir " run command under current dir
 
+        " Used for copy/paste on WSL
+        set clipboard+=unnamedplus
+        let g:clipboard = {
+                    \   'name': 'win32yank-wsl',
+                    \   'copy': {
+                    \      '+': 'win32yank.exe -i --crlf',
+                    \      '*': 'win32yank.exe -i --crlf',
+                    \    },
+                    \   'paste': {
+                    \      '+': 'win32yank.exe -o --lf',
+                    \      '*': 'win32yank.exe -o --lf',
+                    \   },
+                    \   'cache_enabled': 0,
+                    \ }
+
 " --------------------------------------------------------------------------------
 " |                                                                              |
 " |                                   KEYMAP                                     |
@@ -527,3 +542,4 @@
     " TODO: some plugins change the setting
         " set signcolumn=auto:4
     " autocmd CursorHold * silent call CocActionAsync('highlight')
+
