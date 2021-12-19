@@ -12,7 +12,7 @@ cp -r ./ranger $HOME/.config/
 
 
 # lazygit setting
-cp ./lazygit/* $HOME/.config/lazygit
+cp -r ./lazygit/ $HOME/.config/lazygit
 
 cp .tmux.conf $HOME/
 
