@@ -160,7 +160,7 @@ alias lg="lazygit"
 
 # export KEYTIMEOUT=1
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # fzf settings
 # export FZF_DEFAULT_OPTS='--bind=ctrl-t:top,change:top --bind ctrl-e:down,ctrl-u:up'

@@ -48,6 +48,8 @@
 
         Plug 'ryanoasis/vim-devicons' " ✓
         Plug 'junegunn/vim-peekaboo' " ✓ show registers when pasting
+
+        Plug 'wakatime/vim-wakatime'
     call plug#end()
     " lua require('plugins') " packer
 
@@ -151,19 +153,19 @@
         set autochdir " run command under current dir
 
         " Used for copy/paste on WSL
-        set clipboard+=unnamedplus
-        let g:clipboard = {
-                    \   'name': 'win32yank-wsl',
-                    \   'copy': {
-                    \      '+': 'win32yank.exe -i --crlf',
-                    \      '*': 'win32yank.exe -i --crlf',
-                    \    },
-                    \   'paste': {
-                    \      '+': 'win32yank.exe -o --lf',
-                    \      '*': 'win32yank.exe -o --lf',
-                    \   },
-                    \   'cache_enabled': 0,
-                    \ }
+        " set clipboard+=unnamedplus
+        " let g:clipboard = {
+        "             \   'name': 'win32yank-wsl',
+        "             \   'copy': {
+        "             \      '+': 'win32yank.exe -i --crlf',
+        "             \      '*': 'win32yank.exe -i --crlf',
+        "             \    },
+        "             \   'paste': {
+        "             \      '+': 'win32yank.exe -o --lf',
+        "             \      '*': 'win32yank.exe -o --lf',
+        "             \   },
+        "             \   'cache_enabled': 0,
+        "             \ }
 
 " --------------------------------------------------------------------------------
 " |                                                                              |
