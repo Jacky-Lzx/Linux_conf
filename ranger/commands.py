@@ -168,7 +168,7 @@ class latex_clean(Command):
             os.mkdir("removed")
         except:
             pass
-        remove_str = [".log", ".fls", ".aux", ".fdb_latexmk", ".synctex.gz", ".nav", ".out", ".snm", ".toc", ".cpt", ".run.xml", ".blg", ".bcf", ".bbl"]
+        remove_str = [".log", ".fls", ".aux", ".fdb_latexmk", ".synctex.gz", ".nav", ".out", ".snm", ".toc", ".cpt", ".run.xml", ".blg", ".bcf", ".bbl", "-converted-to.pdf"]
         for root, dirs, paths in os.walk(self.fm.thisdir.path):
             for path in paths:
                 for string in remove_str:
@@ -191,7 +191,7 @@ class latex_clean_all(Command):
             os.mkdir("removed")
         except:
             pass
-        remove_str = [".log", ".fls", ".aux", ".fdb_latexmk", ".synctex.gz", ".nav", ".out", ".snm", ".toc", ".cpt", ".run.xml", ".blg", ".bcf", ".bbl"]
+        remove_str = [".log", ".fls", ".aux", ".fdb_latexmk", ".synctex.gz", ".nav", ".out", ".snm", ".toc", ".cpt", ".run.xml", ".blg", ".bcf", ".bbl", "-converted-to.pdf"]
         for _, dirs, _ in os.walk(self.fm.thisdir.path):
             # print(f"dirs:{dirs}")
             for direct in dirs:
