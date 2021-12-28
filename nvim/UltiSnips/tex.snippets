@@ -1,5 +1,16 @@
+# global !p
+# def math():
+#     return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+# 
+# def comment(): 
+#     return vim.eval('vimtex#syntax#in_comment()') == '1'
+# 
+# def env(name):
+#     [x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+#     return x != '0' and x != '0'
+# endglobal
 
-/mnt/c/Users/11741/AppData/Roaming/Code/User/snippets/latex.json
+# /mnt/c/Users/11741/AppData/Roaming/Code/User/snippets/latex.json
 
 snippet frame "frame in beamer"
 \\begin{frame} \\frametitle{$1}
@@ -7,6 +18,7 @@ snippet frame "frame in beamer"
 \\end{frame}
 endsnippet
 
+# context "math()"
 snippet xor "xor"
 \\oplus $0
 endsnippet
@@ -174,9 +186,51 @@ snippet verb
 \\verb|$1|$0
 endsnippet
 
-snippet mk "in-line math balcks" A
+# snippet mk "Inline math" wA
+# $${1}$`!p
+# if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+#     snip.rv = ' '
+# else:
+#     snip.rv = ''
+# `$2
+# endsnippet
+snippet mk "Inline math" wA
 $$1$$0
 endsnippet
+
+snippet // "Fraction" iA
+\\frac{$1}{$2}$0
+endsnippet
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+# snippet '^.*\)/' "() Fraction" wrA
+# `!p
+# stripped = match.string[:-1]
+# depth = 0
+# i = len(stripped) - 1
+# while True:
+# 	if stripped[i] == ')': depth += 1
+# 	if stripped[i] == '(': depth -= 1
+# 	if depth == 0: break;
+# 	i -= 1
+# snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+# `{$1}$0
+# endsnippet
+
+# snippet '(.+)_(\d\d)' "auto subscript" wrA
+# `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`$1}$0
+# endsnippet
+snippet __ "auto subscript" iA
+_{$1}$0
+endsnippet
+# snippet '(.+)\^(\d\d)' "auto superscript" wrA
+# `!p snip.rv = match.group(1)`^{`!p snip.rv = match.group(2)`$1}$0
+# endsnippet
+snippet ^^ "auto subscript" iA
+^{$1}$0
+endsnippet
+
 
 snippet equation
 \begin{equation*}
@@ -206,4 +260,10 @@ snippet figure
 	\\caption{${3:caption}}
 	\\label{fig:${4:$1}}
 \\end{figure}
+endsnippet
+
+snippet begin b
+\\begin{$1}
+	$0
+\\end{$1}
 endsnippet
