@@ -45,6 +45,8 @@
         " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " we recommend updating the parsers on update
         " Plug 'SirVer/ultisnips' " track the engine.
         Plug 'honza/vim-snippets' " ✓ Snippets are separated from the engine.
+        Plug 'lervag/vimtex'
+        Plug 'KeitaNakamura/tex-conceal.vim'
 
         Plug 'ryanoasis/vim-devicons' " ✓
         Plug 'junegunn/vim-peekaboo' " ✓ show registers when pasting
@@ -58,6 +60,12 @@
 " |                                  APPEARANCE                                  |
 " |                                                                              |
 " --------------------------------------------------------------------------------
+    " -----------------------
+    " --- tex-conceal
+    " -----------------------
+        set conceallevel=1
+        let g:tex_conceal='abdmg'
+        hi Conceal ctermbg=none
     " -----------------------
     " --- colorscheme
     " -----------------------

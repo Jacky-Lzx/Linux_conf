@@ -205,3 +205,10 @@ export FZF_COMPLETION_OPTS='--border --info=inline'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+
+# export http_proxy="http://127.0.0.1:7890" 
+# export https_proxy="http://127.0.0.1:7890" 
+# export http_proxy="socks5://127.0.0.1:7891" 
+# export https_proxy="socks5://127.0.0.1:7891"

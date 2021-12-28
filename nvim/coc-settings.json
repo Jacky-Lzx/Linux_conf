@@ -1,4 +1,6 @@
 {
+    "texlab.build.onSave": true,
+    "texlab.chktex.onOpenAndSave": true,
     "coc.preferences.extensionUpdateCheck": "daily",
     "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
     "snippets.snipmate.author": "Zexi. Li",
