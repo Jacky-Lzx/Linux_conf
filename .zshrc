@@ -135,12 +135,14 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias ra="ranger"
 # used for ranger to avoid loading default rc twice
 RANGER_LOAD_DEFAULT_RC=FALSE
-alias vim="nvim"
+# alias vim="nvim"
 alias j="z"
 alias sz="source ~/.zshrc"
 alias ez="nvim ~/.zshrc"
 
 alias s="neofetch"
+alias c="clear"
+alias h="htop"
 
 bindkey -v
 
@@ -205,8 +207,6 @@ export FZF_COMPLETION_OPTS='--border --info=inline'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
 
 # export http_proxy="http://127.0.0.1:7890" 
 # export https_proxy="http://127.0.0.1:7890" 

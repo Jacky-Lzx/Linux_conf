@@ -18,6 +18,14 @@ snippet frame "frame in beamer"
 \\end{frame}
 endsnippet
 
+snippet pp "par" bA
+\\par $0
+endsnippet
+
+snippet xx "times" wA
+\\times $0
+endsnippet
+
 # context "math()"
 snippet xor "xor"
 \\oplus $0
@@ -185,7 +193,9 @@ endsnippet
 snippet verb
 \\verb|$1|$0
 endsnippet
-
+snippet vv "auto verb" wA
+\\verb|$1|$0
+endsnippet
 # snippet mk "Inline math" wA
 # $${1}$`!p
 # if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
@@ -197,6 +207,12 @@ endsnippet
 snippet mk "Inline math" wA
 $$1$$0
 endsnippet
+snippet dm "Inline math" wA
+\[
+	$0
+\]
+endsnippet
+
 
 snippet // "Fraction" iA
 \\frac{$1}{$2}$0

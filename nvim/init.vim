@@ -30,7 +30,7 @@
         " -----------------------
         " --- functional
         " -----------------------
-        " Plug 'preservim/nerdtree'
+        Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
         Plug 'liuchengxu/vista.vim'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'easymotion/vim-easymotion' " ✓
@@ -46,14 +46,19 @@
         " Plug 'SirVer/ultisnips' " track the engine.
         Plug 'honza/vim-snippets' " ✓ Snippets are separated from the engine.
         Plug 'lervag/vimtex'
-        Plug 'KeitaNakamura/tex-conceal.vim'
+        " Plug 'KeitaNakamura/tex-conceal.vim'
 
         Plug 'ryanoasis/vim-devicons' " ✓
         Plug 'junegunn/vim-peekaboo' " ✓ show registers when pasting
 
         Plug 'wakatime/vim-wakatime'
+
+        Plug 'rhysd/vim-llvm'
     call plug#end()
     " lua require('plugins') " packer
+    "
+    " plug for llvm
+    " set runtimepath^=~/.vim/llvm
 
 " --------------------------------------------------------------------------------
 " |                                                                              |
@@ -63,15 +68,21 @@
     " -----------------------
     " --- tex-conceal
     " -----------------------
-        set conceallevel=1
-        let g:tex_conceal='abdmg'
-        hi Conceal ctermbg=none
+        " set conceallevel=1
+        " let g:tex_conceal='abdmg'
+        " hi Conceal ctermbg=none
     " -----------------------
     " --- colorscheme
     " -----------------------
         syntax on " syntax
         set background=dark
+
+        " this command doesn't work
+        let g:gruvbox_transparent_bg = 1
+        let g:gruvbox_italic=1
         colorscheme gruvbox
+        " set transparent background
+        " autocmd VimEnter * hi Normal ctermbg=none guibg=none
         " colorscheme synthwave84
         " set guifont=Consolas:h13:cANSI:qDRAFT
         " highlight Search guibg=peru
@@ -115,8 +126,8 @@
 " |                                                                              |
 " --------------------------------------------------------------------------------
         set foldmethod=indent
-        set conceallevel=2 " set conceal level to hide special characters
-        set concealcursor= " the characters on current line should not be concealed. can be changed to inc
+        " set conceallevel=2 " set conceal level to hide special characters
+        " set concealcursor= " the characters on current line should not be concealed. can be changed to inc
         set mouse=a " enable mouse
         " TODO: not sort yet
         let mapleader = ' ' " set leader key to <space>
@@ -155,10 +166,15 @@
         " set backspace=indent,eol,start " to solve the problem that backspace cannot delete things (note CTRL-I is the same as <Tab>)
         set ignorecase
         set smartcase
+        " No highlights for search when startup
+        exec "nohlsearch"
         set hlsearch " highlight search results when searching
         set incsearch " find matches when spelling
 
         set autochdir " run command under current dir
+
+        nnoremap n nzz
+        nnoremap N Nzz
 
         " Used for copy/paste on WSL
         " set clipboard+=unnamedplus
@@ -174,6 +190,7 @@
         "             \   },
         "             \   'cache_enabled': 0,
         "             \ }
+        set clipboard+=unnamedplus
 
 " --------------------------------------------------------------------------------
 " |                                                                              |
@@ -219,6 +236,15 @@
         " let g:startify_custom_header = g:ascii + startify#fortune#boxed()
         let g:startify_custom_header =
             \ 'startify#pad(startify#fortune#boxed() + g:ascii)'
+
+    " -----------------------
+    " --- plug.nerdtree
+    " -----------------------
+        " nnoremap <leader>n :NERDTreeFocus<CR>
+        " nnoremap <C-n> :NERDTree<CR>
+        " nnoremap <C-t> :NERDTreeToggle<CR>
+        nnoremap <leader>nt :NERDTreeToggle<CR>
+        nnoremap <C-f> :NERDTreeFind<CR>
 
     " -----------------------
     " --- plug.vista
@@ -315,7 +341,7 @@
                     \ 'coc-marketplace',
                     \ 'coc-spell-checker',
                     \ 'coc-snippets',
-                    \ 'coc-texlab',
+                    \ 'coc-texlab', 'coc-vimtex',
                     \ 'coc-lists',
                     \ 'coc-git',
                     \ 'coc-pairs',
@@ -552,4 +578,4 @@
     " TODO: some plugins change the setting
         " set signcolumn=auto:4
     " autocmd CursorHold * silent call CocActionAsync('highlight')
-
+    hi Conceal ctermfg=109 guifg=#83a598 ctermbg=NONE guibg=NONE
